@@ -1,0 +1,1 @@
+"""Agent recepcji telefonicznej — pakiet."""

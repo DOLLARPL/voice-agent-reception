@@ -1,0 +1,8 @@
+# Sekrety i dane lokalne — nigdy do repozytorium.
+.env
+dane/
+nagrania/
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/

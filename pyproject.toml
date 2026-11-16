@@ -1,0 +1,20 @@
+[project]
+name = "voice-agent-recepcja"
+version = "0.1.0"
+description = "Agent głosowy recepcji warsztatu: Pipecat + Twilio + OpenRouter + Google Calendar"
+requires-python = ">=3.12"
+dependencies = [
+    # Pętla głosowa. Extras: deepgram (STT pl), elevenlabs (TTS pl), silero (VAD), openai (klient HTTP, też do OpenRouter), google (LLM Google, nieużywany ale w extrasach Pipecatu).
+    "pipecat-ai[deepgram,elevenlabs,silero,openai,google]>=1.11,<2",
+    "google-api-python-client>=2.100",
+    "google-auth>=2.30",
+    "python-dotenv>=1.0",
+    "fastapi>=0.115",
+    "uvicorn[standard]>=0.30",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=8.0", "httpx>=0.27"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
