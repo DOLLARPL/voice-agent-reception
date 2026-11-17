@@ -14,6 +14,12 @@ import os
 import sys
 from pathlib import Path
 
+import pytest
+
+# Bez `pipecat` nie da się zbudować pętli, więc moduł się pomija zamiast wywalać
+# czterema błędami importu. Po `pip install -e .` testy jadą normalnie.
+pytest.importorskip("pipecat", reason="brak pipecat: zainstaluj zależności z pyproject.toml")
+
 os.environ.setdefault("DEEPGRAM_API_KEY", "test")
 os.environ.setdefault("ELEVENLABS_API_KEY", "test")
 os.environ.setdefault("ELEVENLABS_VOICE_ID", "test")
